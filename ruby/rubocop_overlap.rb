@@ -89,7 +89,7 @@ class RubocopOverlap
     CSV.generate do |csv|
       csv << ['Rule', 'Rubocop Default'] + @repos
 
-      @default_config.rule_keys.sort.each do |key|
+      @defined_keys.each do |key|
         row = [key]
 
         row << @default_config.rule_value_for_key(key)
